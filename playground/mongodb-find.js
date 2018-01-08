@@ -19,16 +19,30 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
         console.log('unable to find Todos, err');
         });
     */  
-    
+/*
      db.collection('Todos')
-    .find({text: 'walk the dog'})
-    .count()
+    .find()
+   // .count()
+   .toArray()
     .then((docs) => {
     
     console.log(docs);
     }, (err) => {
         console.log('unable to find Todos, err');
         });
+ */      
+        
+          db.collection('Users')
+    .find()
+   // .count()
+   .toArray()
+    .then((docs) => {
+    
+    console.log(docs);
+    }, (err) => {
+        console.log('unable to find Todos, err');
+        });
+      
         
     /*    
      db.collection('Todos')
