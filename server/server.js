@@ -30,4 +30,6 @@ app.listen(8080, () => {
 
 });
 
+module.exports = {app};
+
 //  https://monog-tut-roboserve.c9users.io:8080/todos
