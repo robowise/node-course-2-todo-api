@@ -9,7 +9,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     }
     console.log('connected to mongodb server');
 
-    /*
+/*    
     db.collection('Todos')
     .find({_id: new ObjectID('5a5203487c16ab10e1d08d66')})
     .toArray().then((docs) => {
@@ -18,7 +18,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     }, (err) => {
         console.log('unable to find Todos, err');
         });
-    */  
+  */    
 /*
      db.collection('Todos')
     .find()
@@ -30,8 +30,8 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     }, (err) => {
         console.log('unable to find Todos, err');
         });
- */      
-        
+*/     
+
           db.collection('Users')
     .find()
    // .count()
@@ -42,7 +42,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     }, (err) => {
         console.log('unable to find Todos, err');
         });
-      
+ 
         
     /*    
      db.collection('Todos')
