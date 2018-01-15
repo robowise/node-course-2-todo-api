@@ -5,8 +5,8 @@ const {Todo} = require('./../server/models/todo');
 const {Users} = require('./../server/models/user');
 
 
-var id = '5a534a95cae54a1ae0f1c194';
-/*
+var id = '5a5b3e1870ee2f18ee425bab';
+/*       
 if(!ObjectID.isValid(id)) {
     console.log('id not valid');
 }
@@ -25,15 +25,15 @@ Todo.findOne({
     console.log("todos find one: ", todo);
 });
 */
-/*
+
 Todo.findById(id).then((todo) =>{
-    console.log("todos find by ID: ", todo);
+    console.log("todos find by ID: ", JSON.stringify(todo, undefined, 2));
     if(! todo) {
        return console.log('todo does not exist');
     }
 }).catch((e) => console.log(e));
-*/
 
+/*
 Users.findById(id).then((user) => {
     console.log('user find by ID : ', user);
     if(!user) {
@@ -41,7 +41,7 @@ Users.findById(id).then((user) => {
     }
 }).catch((e) => console.log(e));
 
-
+*/
 
 
 
