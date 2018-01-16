@@ -6,6 +6,8 @@ var {mongoose} = require("./db/mongoose");
 var {Todo} = require("./models/todo");
 var {Users} = require("./models/user");
 
+const port = process.env.PORT || 8080;
+
 var app = express();
 const {ObjectID} = require('mongodb');
 
@@ -38,7 +40,6 @@ app.get('/todos/:id', (req, res) => {
       
 if(!ObjectID.isValid(id)) {
    return res.status(404).send('oops!');
-   
 }
 
 //checking by ID
@@ -66,8 +67,8 @@ Todo.findById(id).then((todo) =>{
 
 
 
-app.listen(8080, () => {
-    console.log("started on port 8080");
+app.listen(port, () => {
+    console.log(`started on port: ${port} `);
 });
 
 module.exports = {app};
