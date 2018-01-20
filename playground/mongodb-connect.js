@@ -32,7 +32,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     
     });
 
-
+/*
     db.collection('Users').insertOne({
        // _id: 1234,
         name: 'fouad',
@@ -47,7 +47,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
         console.log(result.ops);
     });
     
-
+*/
     db.close();
 });
 

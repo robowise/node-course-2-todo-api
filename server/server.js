@@ -10,8 +10,9 @@ const port = process.env.PORT || 8080;
 
 
 const {ObjectID} = require('mongodb');
-
+//..//
 app.use(bodyParser.json());
+
 //..//
 app.post('/todos', (req, res) => {
     var todo = new Todo({
@@ -23,6 +24,7 @@ todo.save().then((doc) => {
     res.status(400).send(e);
 });
 });
+
 //..//
 app.get('/todos', (req, res) => {
     Todo.find().then((todos) => {
@@ -31,13 +33,10 @@ app.get('/todos', (req, res) => {
         res.status(400).send(e);
     });
 });
-
-
 //*******************************************//
 //getting the ID
 app.get('/todos/:id', (req, res) => {
     var id = req.params.id;
-      
 if(!ObjectID.isValid(id)) {
    return res.status(404).send('oops!');
 }
@@ -55,16 +54,22 @@ Todo.findById(id).then((todo) =>{
     
 }).catch((e) => res.status(400).send());
 
-
-
-
 });
-
-
-
-//********************************************//
-
-
+//***************** DELETE ***************************//
+app.delete('/todos/:id', (req, res) => {
+    var id = req.params.id;
+    if(!ObjectID.isValid(id)) {
+    return res.status(404).send('oops!');
+    }
+    Todo.findByIdAndRemove(id).then((todo) => {
+   // console.log(todo);
+     if(! Todo) {
+       return res.status(500).send();
+    }
+    res.status(200).send(todo);
+    }).catch((e) => res.status(400).send()) ;
+    
+});
 
 
 app.listen(port, () => {

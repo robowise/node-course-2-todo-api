@@ -11,7 +11,7 @@ if(!ObjectID.isValid(id)) {
     console.log('id not valid');
 }
 */
-/*
+
 Todo.find({
     _id: id
 }).then((todo) =>{
@@ -24,15 +24,15 @@ Todo.findOne({
 }).then((todo) =>{
     console.log("todos find one: ", todo);
 });
-*/
 
+/*
 Todo.findById(id).then((todo) =>{
     console.log("todos find by ID: ", JSON.stringify(todo, undefined, 2));
     if(! todo) {
        return console.log('todo does not exist');
     }
 }).catch((e) => console.log(e));
-
+*/
 /*
 Users.findById(id).then((user) => {
     console.log('user find by ID : ', user);
