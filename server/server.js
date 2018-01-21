@@ -93,7 +93,7 @@ app.patch('/todos/:id', (req, res) => {
             return res.status(400).send();
         }
         res.send({todo});
-    }).catchc((e) => {
+    }).catch((e) => {
         res.status(400).send;
     });
 });
