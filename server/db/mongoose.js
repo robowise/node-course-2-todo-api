@@ -1,15 +1,6 @@
-var mongoose = require("mongoose");
-
-var MONGODB_URI = 'mongodb://fouad:fouad@ds159187.mlab.com:59187/udemy';
+var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-
-mongoose.connect(process.env.MONGODB_URI, {
-  useMongoClient: true,
-  
-});
+mongoose.connect(process.env.MONGODB_URI);
 
 module.exports = {mongoose};
-
-//mongodb://localhost:27017/TodoApp
-//mongodb://<dbuser>:<dbpassword>@ds159187.mlab.com:59187/udemy
